@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "SecurityQueue": "UseDevelopmentStorage=true",
+    "STORE_PROVIDER": "memory",
+    "BUS_PROVIDER": "memory",
+    "VULN_FEED": "local",
+    "SEED_PASSWORD": "Demo@12345",
+    "JWT_SECRET": "local-dev-only-secret-change-me-0123456789",
+    "INGEST_API_KEY": "local-ingest-key"
+  }
+}

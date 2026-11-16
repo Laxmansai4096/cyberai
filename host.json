@@ -1,0 +1,12 @@
+{
+  "version": "2.0",
+  "logging": {
+    "logLevel": { "default": "Warning", "Function": "Information" },
+    "applicationInsights": { "samplingSettings": { "isEnabled": true, "excludedTypes": "Request" } }
+  },
+  "extensions": {
+    "http": { "routePrefix": "" },
+    "queues": { "messageEncoding": "none", "maxDequeueCount": 3 }
+  },
+  "extensionBundle": { "id": "Microsoft.Azure.Functions.ExtensionBundle", "version": "[4.*, 5.0.0)" }
+}

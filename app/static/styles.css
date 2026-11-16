@@ -1,0 +1,28 @@
+:root{--bg:#f3f5f9;--card:#fff;--ink:#101828;--muted:#5d6b82;--line:#e2e7ef;--pri:#4f46e5;--pri2:#4338ca;--chip:#eef0fe;
+--crit:#b42318;--high:#dc6803;--med:#ca8a04;--low:#2e90fa;--ok:#039855;--bar:#c7cbf5;--bar2:#e05d44}
+@media (prefers-color-scheme:dark){:root{--bg:#0b0f17;--card:#121826;--ink:#e5e9f2;--muted:#8d99ae;--line:#222b3c;--pri:#818cf8;--pri2:#6366f1;--chip:#1e2240;--bar:#3d4290;--bar2:#f97066}}
+*{box-sizing:border-box}body{margin:0;font:14.5px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+.topbar{display:flex;align-items:center;gap:16px;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.brand{font-size:18px;white-space:nowrap}.logo{color:var(--pri)}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}nav button{background:none;border:0;padding:7px 12px;border-radius:8px;color:var(--muted);cursor:pointer;font:inherit}
+nav button.active,nav button:hover{background:var(--chip);color:var(--pri)}#who{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+main{max-width:1200px;margin:20px auto;padding:0 16px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.two{display:grid;gap:16px;grid-template-columns:3fr 2fr}@media (max-width:900px){.two{grid-template-columns:1fr}}
+.stat{font-size:28px;font-weight:700}.label{color:var(--muted);font-size:13px}h2{margin:0 0 12px;font-size:18px}h3{margin:14px 0 6px;font-size:15px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600}
+tr.click{cursor:pointer}tr.click:hover{background:var(--chip)}
+input,select,textarea{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}textarea{min-height:120px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px}
+label{display:block;font-size:12.5px;color:var(--muted);margin:8px 0 4px}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>*{flex:1;min-width:130px}
+button.btn{background:var(--pri);color:#fff;border:0;padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit}button.btn:hover{background:var(--pri2)}
+button.ghost{background:none;border:1px solid var(--line);color:var(--ink);padding:5px 10px;border-radius:8px;cursor:pointer;font:inherit;margin:2px}button.ghost:hover{border-color:var(--pri);color:var(--pri)}
+.chip{display:inline-block;padding:1px 8px;border-radius:99px;background:var(--chip);color:var(--pri);font-size:12px;margin:1px}
+.sev{display:inline-block;padding:1px 8px;border-radius:6px;color:#fff;font-size:12px;font-weight:600;text-transform:uppercase}
+.sev.critical{background:var(--crit)}.sev.high{background:var(--high)}.sev.medium{background:var(--med)}.sev.low{background:var(--low)}
+.st{font-size:12px;padding:1px 8px;border-radius:99px;border:1px solid var(--line)}.st.ok{color:var(--ok);border-color:var(--ok)}
+.muted{color:var(--muted)}.small{font-size:12px}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12.5px}.hidden{display:none}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;max-width:440px;z-index:9}
+.login{max-width:420px;margin:60px auto}.demo td{padding:3px 6px}
+.explain{border-left:4px solid var(--pri);padding:8px 12px;background:var(--chip);border-radius:6px}
+.hbar{display:flex;align-items:center;gap:8px;margin:4px 0}.hbar span:first-child{width:140px;font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hbar .b{height:12px;border-radius:3px;background:var(--pri)}
+svg text{fill:var(--muted);font-size:10px}.legend{font-size:12px;color:var(--muted)}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin:0 4px 0 10px}
+.hist li{font-size:12.5px}

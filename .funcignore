@@ -1,0 +1,11 @@
+.venv
+.git
+.github
+tests
+docs
+scripts
+sample-data
+__pycache__
+*.md
+requirements-dev.txt
+local.settings.json

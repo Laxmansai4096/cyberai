@@ -1,0 +1,13 @@
+{"source":"mediflow","timestamp":"2026-11-16T10:00:05Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:00:25Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:00:45Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:01:05Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:01:25Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:01:45Z","event_type":"auth.login_failure","user":"dr.rao","ip":"203.0.113.66","outcome":"failure"}
+{"source":"mediflow","timestamp":"2026-11-16T10:02:30Z","event_type":"auth.login_success","user":"dr.rao","ip":"203.0.113.66","outcome":"success","roles":["Doctor"]}
+{"source":"firewall","timestamp":"2026-11-16T10:05:00Z","src_ip":"192.0.2.200","dst_ip":"10.0.0.4","dst_port":22,"action":"deny","protocol":"tcp"}
+{"source":"firewall","timestamp":"2026-11-16T10:05:02Z","src_ip":"192.0.2.200","dst_ip":"10.0.0.4","dst_port":23,"action":"deny","protocol":"tcp"}
+{"source":"firewall","timestamp":"2026-11-16T10:05:04Z","src_ip":"192.0.2.200","dst_ip":"10.0.0.4","dst_port":80,"action":"allow","protocol":"tcp"}
+{"source":"windows","EventID":4732,"TimeCreated":"2026-11-16T10:10:00Z","Computer":"HIS-DC01","TargetUserName":"svc_backup","TargetGroup":"Administrators","SubjectUserName":"jdoe"}
+{"source":"windows","EventID":4625,"TimeCreated":"2026-11-16T10:11:00Z","Computer":"HIS-DC01","TargetUserName":"administrator","IpAddress":"198.51.100.23"}
+{"source":"generic","timestamp":"2026-11-16T10:12:00Z","event_type":"phi.export","user":"nurse.priya","ip":"10.20.0.15","resource":"patient/p_1001/fhir","outcome":"success"}
