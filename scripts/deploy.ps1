@@ -27,7 +27,8 @@ param(
   [string]$LawRg = "rg-azure-explorer",
   [switch]$CodeOnly
 )
-$ErrorActionPreference = "Stop"
+# az writes WARNINGs to stderr; with "Stop" PowerShell would abort on them, so check $LASTEXITCODE instead.
+$ErrorActionPreference = "Continue"
 $App = "fn-cyberai-$Suffix"
 if (-not $CosmosName) { $CosmosName = "cosmos-cyberai-$($CosmosLocation.Substring(0,3))$Suffix" }
 $Root = Split-Path $PSScriptRoot -Parent
@@ -84,7 +85,9 @@ New-Item -ItemType Directory $stage | Out-Null
 Copy-Item "$Root/function_app.py", "$Root/host.json", "$Root/requirements.txt" $stage
 Copy-Item -Recurse "$Root/app" "$stage/app"
 Get-ChildItem $stage -Recurse -Directory -Filter __pycache__ | Remove-Item -Recurse -Force
-Compress-Archive -Path "$stage/*" -DestinationPath $zip
-az functionapp deployment source config-zip -g $ResourceGroup -n $App --src $zip --build-remote true -o none
-$hostName = az functionapp show -g $ResourceGroup -n $App --query defaultHostName -o tsv
+# Windows PowerShell's Compress-Archive writes backslash paths, which break on Linux; use Python's zipfile instead.
+python -c "import sys,zipfile,pathlib; s=pathlib.Path(sys.argv[1]); z=zipfile.ZipFile(sys.argv[2],'w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(s).as_posix()) for p in s.rglob('*') if p.is_file()]; z.close()" $stage $zip
+az functionapp deployment source config-zip -g $ResourceGroup -n $App --src $zip --build-remote true -o none 2>&1 | Where-Object { $_ -notmatch "WARNING" }
+if ($LASTEXITCODE -ne 0) { throw "Deployment failed (exit $LASTEXITCODE)" }
+$hostName = az functionapp show -g $ResourceGroup -n $App --query "properties.defaultHostName" -o tsv
 Write-Host "Deployed: https://$hostName" -ForegroundColor Green
